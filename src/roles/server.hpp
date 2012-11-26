@@ -313,6 +313,7 @@ void server<endpoint>::stop_listen(bool join) {
     }
 
     m_state = STOPPING;
+    m_endpoint.stop();
 
     if(join) {
         for (std::size_t i = 0; i < m_listening_threads.size(); ++i) {
